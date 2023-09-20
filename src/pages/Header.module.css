@@ -1,0 +1,11 @@
+.header {
+    background-color: lightseagreen;
+    height: 150px;
+    border-radius: 20px;
+    border-color: lightseagreen;
+    border-style: groove;
+    border-width: 3px;
+}
+.header h1 {
+    margin-left: 800px;
+}

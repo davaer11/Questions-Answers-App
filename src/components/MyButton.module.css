@@ -1,0 +1,12 @@
+.btn {
+    cursor:pointer;
+    background-color:rgb(24, 125, 172);
+    padding: 15px;
+    margin-left: 10px;
+    color:rgb(255, 255, 255);
+    border-radius: 15px;
+
+}
+.btn:hover :active {
+    background-color: rgb(22, 22, 24);
+}
