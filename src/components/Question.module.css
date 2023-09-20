@@ -1,0 +1,10 @@
+.questionStyle {
+    display: flex;
+}
+.questionStyle input {
+    margin-left: 15px;
+}
+.questionStyle label {
+    margin-top: 15px;
+    margin-left: 10px;
+}

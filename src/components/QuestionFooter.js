@@ -4,11 +4,13 @@ import { useState } from "react";
 import QuestionForm from "./QuestionForm";
 import { useSelector, useDispatch } from "react-redux";
 import { questionActions } from "../store/question-slice";
+import ColorOptions from './ColorOptions';
 
 const QuestionFooter = () => {
 
     const [showQuestionForm, setShowQuestionForm] = useState(false);
     const [selectedForDelete, setSelectedForDelete] = useState(-1);
+    const [showColorOptions, setShowColorOptions] = useState(false);
 
     const dispatch = useDispatch();
     const questionIds = useSelector(state => state.questions.questions.map((question => question.id)));
@@ -16,6 +18,10 @@ const QuestionFooter = () => {
     const closeQuestionForm = () => {
         setShowQuestionForm(false)
     }
+    const closeColorOptions = () => {
+        setShowColorOptions(false);
+    }
+
     const openQuestionForm = () => {
         setShowQuestionForm(true);
     }
@@ -23,9 +29,15 @@ const QuestionFooter = () => {
         dispatch(questionActions.removeQuestion(selectedForDelete));
         setSelectedForDelete(-1);
     }
+    const addColorToQuestion = () => {
+        setShowColorOptions(true)
+    }
   
     if (showQuestionForm) {
         return <QuestionForm closeQuestionForm = {closeQuestionForm} />
+    }
+    else if(showColorOptions) {
+        return <ColorOptions closeColorOptions = {closeColorOptions}/>
     }
     else {
 
@@ -43,8 +55,7 @@ const QuestionFooter = () => {
                         ))}
                     </select>
                 </div>
-               
-                <MyButton text = "Add color" />
+                <MyButton onClick = {addColorToQuestion} text = "Add color" />
             </div>
         )
     }
