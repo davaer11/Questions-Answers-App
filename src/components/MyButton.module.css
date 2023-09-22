@@ -1,12 +1,17 @@
 .btn {
     cursor:pointer;
-    background-color:rgb(24, 125, 172);
+    background-color:rgb(12, 78, 201);
     padding: 15px;
     margin-left: 10px;
     color:rgb(255, 255, 255);
     border-radius: 15px;
+    transition: background-color 0.3s ease-in-out; 
 
 }
 .btn:hover :active {
     background-color: rgb(22, 22, 24);
+}
+.btn :disabled { /* ovo ne radi kako da to proradi?*/
+    cursor: not-allowed;
+    background-color: grey
 }

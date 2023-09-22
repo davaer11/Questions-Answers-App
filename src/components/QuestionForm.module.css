@@ -1,3 +1,18 @@
 .questionForm {
-    z-index:500;
+   border: 3px solid rgb(82, 74, 74);
+   border-radius: 10px;
+   width: 50%;
+   margin-left: 480px;
+   margin-top: 30px;
+   background-color: rgb(185, 102, 70);
+   padding: 20px;
+   display: flex;
+}
+.questionForm div {
+    margin-left: 20px;
+}
+.questionForm input {
+    width: 30%;
+    border-radius: 10px;
+    border-color: rgb(58, 58, 156)
 }

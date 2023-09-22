@@ -1,0 +1,40 @@
+.answersStyle div:first-child {
+    background-color: lightgreen;
+    border: thick double;
+    border-radius: 20px;
+    margin-top: 20px;
+    width: 900px;
+    margin-left: 500px;
+}
+.answersStyle div:first-child h1 {
+    border: 4px solid rgb(30, 196, 113);
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+} 
+.answersStyle div:first-child ul {
+    list-style: none;
+    margin-left: 40px;
+}
+.answersStyle div:first-child li {
+    margin-bottom: 15px;
+    font-size: 20px;
+    border: 3px solid rgb(30, 196, 113);
+    width: 85%;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.answersStyle div:last-child {
+    margin-top: 450px;
+    border-top: 2px solid rgb(30, 196, 113);
+    border-right: 2px solid rgb(30, 196, 113);
+    width: 30%;
+    height: 30%;
+    border-radius: 10px;
+
+}

@@ -1,5 +1,5 @@
 .qFooter {
-    margin-top: 600px;
-    margin-left: 800px;
     display: flex;
+    justify-content: center;
+    margin-top:450px;
 }
