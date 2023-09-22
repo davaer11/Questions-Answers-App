@@ -8,12 +8,14 @@ const Header = () => {
         <>
             <div className={styles.header}>
                 <h1>Question Answer App</h1>
-                <NavLink to = "questions">
-                    <MyButton text = "Questions"></MyButton>
-                </NavLink>
-                <NavLink to = "answers">
-                    <MyButton text = "Answers"></MyButton>
-                </NavLink>
+                <div>
+                    <NavLink to = "questions">
+                        <MyButton text = "Questions"></MyButton>
+                    </NavLink>
+                    <NavLink to = "answers">
+                        <MyButton text = "Answers"></MyButton>
+                    </NavLink>
+                </div>
             </div>
             <Outlet />
        </>

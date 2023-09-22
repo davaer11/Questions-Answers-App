@@ -21,8 +21,10 @@ const QuestionForm = (props) => {
     return (
         <div className = {styles.questionForm}>
             <input value = {questionText} placeholder="Write your question" onChange = {(event) => setQuestionText(event.target.value)}></input>
-            <MyButton onClick = {handleAddBtn} text = "Add"/>
-            <MyButton onClick = {handleCloseBtn} text = "Close" />
+            <div>
+                <MyButton onClick = {handleAddBtn} text = "Add"/>
+                <MyButton onClick = {handleCloseBtn} text = "Close" />
+            </div>
         </div>
     );
 };

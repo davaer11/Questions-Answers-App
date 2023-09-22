@@ -42,6 +42,18 @@ const questionSlice = createSlice({
         },
         removeQuestion(state, action) { //action payload = id 
             state.questions = state.questions.filter(question => question.id !== Number(action.payload));
+        },
+        addAnswer(state,action) { //action payload = {id, answer, labeled)
+            console.log(action.payload)
+            state.questions = state.questions.map(question => {
+                if(question.id === Number(action.payload.id)) {
+                    question.answer = action.payload.answer;
+                    question.labeled = action.payload.labeled;
+                    return question;
+                }
+                return question;
+            })
+
         } 
     }
 });
