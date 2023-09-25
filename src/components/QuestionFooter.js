@@ -5,7 +5,7 @@ import QuestionForm from "./QuestionForm";
 import { useSelector, useDispatch } from "react-redux";
 import { questionActions } from "../store/question-slice";
 import ColorOptions from './ColorOptions';
-
+//TODO izdvojit logiku za brisanje u novu komponentu gdje ću moć brisat s obzirom na boju, s obzirom na id pitanja, s obzirom na neki drugi parametar ili cu moc brisat vise pitanja odjednom
 const QuestionFooter = () => {
 
     const [showQuestionForm, setShowQuestionForm] = useState(false);
@@ -37,7 +37,7 @@ const QuestionFooter = () => {
         return <QuestionForm closeQuestionForm = {closeQuestionForm} />
     }
     else if(showColorOptions) {
-        return <ColorOptions closeColorOptions = {closeColorOptions}/>
+        return <ColorOptions closeColorOptions = {closeColorOptions} questionIds = {questionIds}/>
     }
     else {
 

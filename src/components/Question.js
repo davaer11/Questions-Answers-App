@@ -3,6 +3,7 @@ import { useState } from 'react';
 import {questionActions} from '../store/question-slice';
 import { useDispatch } from 'react-redux';
 
+//TODO: kad se označi yes ili no i kad se na tako označeno pokuša označit onaj ne označeni ispisat neki tekst da se to ne može i da se prvo treba odznačit trenutno označeno
 const Question = (props) => {
     
     const textColor = {
@@ -16,14 +17,18 @@ const Question = (props) => {
     const toggleCheckBox = (boxText, boxValue) => {
        
         if (boxText === "yes") {
-            if (!noBox) {
-                setYesBox(boxValue);
+
+            if (noBox) {
+                setNoBox(!noBox);
             }
+            setYesBox(boxValue);
+           
         }
         if (boxText === "no") {
-            if (!yesBox) {
-                setNoBox(boxValue);
+            if (yesBox) {
+                setYesBox(!yesBox);
             }
+            setNoBox(boxValue);
         }
         dispatch(questionActions.addAnswer({id: props.id, answer: boxText, labeled: boxValue}));
     }

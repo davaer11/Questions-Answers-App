@@ -1,0 +1,42 @@
+.colorOpt {
+   border: 3px solid rgb(82, 74, 74);
+   border-radius: 10px;
+   width: 50%;
+   margin-left: 480px;
+   margin-top: 30px;
+   background-color: rgb(185, 102, 70);
+   padding: 20px;
+   display: flex;
+}
+.colorOpt > div:last-child {
+    padding-right:480px;
+    display: inherit;
+}
+.colorOpt > div:last-child button {
+    width: 100px;
+    height: 50px;
+}
+.colorOpt > :nth-child(2) {
+    padding-left: 30px;
+    padding-top: 20px;
+}
+.middleDivContainer {
+    display:inherit;
+    padding-left: 30px;
+}
+.middleDivContainer > div:first-child {
+    margin-right: 10px;
+}
+.middleDivContainer input[type = "checkbox"]{
+    cursor:pointer;
+    width:15px;
+    height:15px;
+}
+.middleDivContainer label {
+    font-size:20px;
+}
+.middleDivContainer > div:last-child {
+    margin-left: 10px;
+}
+
+   

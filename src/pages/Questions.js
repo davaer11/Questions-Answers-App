@@ -5,6 +5,8 @@ import styles from './Questions.module.css';
 import MyButton from "../components/MyButton";
 import { NavLink} from "react-router-dom";
 
+//TODO: DODAT TIMER KOJI ODBROJAVA I KAD ODBROJI AKO SU NEKA PITANJA BILA OZNAČENA ODZNAČIT IH TJ. ODZNAČIT SVA PITANJA (TIMER TREBA KUCAT SAMO U SLUČAJU DA JE OZNAČENO JEDNO PITANJE)
+
 const Questions = () => {
 
     const questions = useSelector(state => state.questions.questions);
