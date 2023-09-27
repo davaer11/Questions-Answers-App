@@ -5,15 +5,17 @@ import QuestionForm from "./QuestionForm";
 import { useSelector, useDispatch } from "react-redux";
 import { questionActions } from "../store/question-slice";
 import ColorOptions from './ColorOptions';
+import { selectQuestionIds } from "../store/question-slice";
 //TODO izdvojit logiku za brisanje u novu komponentu gdje ću moć brisat s obzirom na boju, s obzirom na id pitanja, s obzirom na neki drugi parametar ili cu moc brisat vise pitanja odjednom
+//PITANJE: Je li bolje da QuestionFooter bude parent Questions komponenti, jer svaki put kad mi se promijeni Questions komponenta QuestionFooter se nanovo renderira i dobivam neki warning??
 const QuestionFooter = () => {
-
+    
     const [showQuestionForm, setShowQuestionForm] = useState(false);
     const [selectedForDelete, setSelectedForDelete] = useState(-1);
     const [showColorOptions, setShowColorOptions] = useState(false);
 
     const dispatch = useDispatch();
-    const questionIds = useSelector(state => state.questions.questions.map((question => question.id)));
+    const questionIds = useSelector(selectQuestionIds);
 
     const closeQuestionForm = () => {
         setShowQuestionForm(false)

@@ -1,3 +1,4 @@
+/*
 .header {
     background-color: rgb(42, 207, 171);
     height: 150px;
@@ -9,8 +10,26 @@
 .header h1 {
     margin-left: 800px;
 }
+*/
+.header {
+    background-color: rgb(42, 207, 171);
+    height: 150px;
+    border-radius: 20px;
+    border-color: lightseagreen;
+    border-style: groove;
+    border-width: 3px;
+}
 .header div {
-    display:flex;
-    justify-content: right;
-    margin-right: 20px;
+    display: flex;
+}
+.header div div:last-child {
+    padding-left: 550px;
+    padding-top: 90px;
+}
+.header div h1 {
+    padding-left: 500px;
+    padding-top: 10px;
+}
+.header div div:first-child {
+    padding-top: 50px;
 }

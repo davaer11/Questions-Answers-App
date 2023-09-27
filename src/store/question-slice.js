@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createSelector } from '@reduxjs/toolkit';
 
 const createID = (questions) => {
 
@@ -61,8 +61,58 @@ const questionSlice = createSlice({
                 }
                 return question;
             })
+        },
+        toggleQuestionLabel(state,action) {   //action.payload = id
+            
+            state.questions.map(question => {
+                if(question.id === Number(action.payload)) {
+                    question.labeled = !question.labeled;
+                }
+                return question;
+            });
+
+        },
+        setQuestionAnswer(state,action) { //action.payload = {id, answer}
+            
+            state.questions.map(question => {
+                if(question.id === Number(action.payload.id)) {
+                    question.answer = action.payload.answer;
+                }
+                return question;
+            });
+        },
+        uncheckAllQuestions(state,action) {
+            state.questions.map(question => {
+                question.labeled = false;
+                question.answer = "";
+                return question;
+            })
         } 
     }
 });
+export const selectAllQuestions = state => state.questions.questions; 
+export const selectLabeledQuestions = createSelector(
+    selectAllQuestions,
+    allQuestions => allQuestions.map(question => question.labeled)
+);
+export const selectQuestionIds = createSelector(
+    selectAllQuestions,
+    allQuestions => allQuestions.map(question => question.id)
+);
+//Ova dva selektora ispod spojit u jedan da bude manje koda? 
+export const selectQuestionLabel = createSelector(
+    [selectAllQuestions,(_,id) => id],  
+    (allQuestions,id) => {
+        const question = allQuestions.find(q => q.id === Number(id));
+        return question ? question.label : null;
+    }
+);
+export const selectQuestionAnswer = createSelector(
+    [selectAllQuestions, (_,id) => id], 
+    (allQuestions,id) => {
+        const question = allQuestions.find(q => q.id === Number(id));
+        return question ? question.answer : null;
+    }
+);
 export const questionActions = questionSlice.actions; //action creators
 export default questionSlice;

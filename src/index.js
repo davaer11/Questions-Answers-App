@@ -7,11 +7,9 @@ import { Provider } from 'react-redux';
 import store from './store/index'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+root.render( //Nisam u React.StrictMode
   <Provider store = {store}>
-    <React.StrictMode>
       <App />
-    </React.StrictMode>
   </Provider>
 );
 
